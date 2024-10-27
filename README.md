@@ -6,7 +6,6 @@
 - [Features](#features)
 - [Usage](#usage)
 - [Installation](#installation)
-- [API Documentation](#api-documentation)
 
 ## Introduction
 
@@ -20,16 +19,17 @@ VaultX is a simple file encryption tool that uses the Fernet symmetric encryptio
 - File decryption: Decrypts files with a `.vaultx` extension.
 - GUI and CLI support: Provides both a graphical user interface and a command-line interface.
 - Automatic decryption: Prompts for decryption when double-clicking a .vaultx file.
+- Windows Context Menu: Shows a context menu option for decryption and encryption when right-clicking a file.
 ## Usage
 
 ### Command-Line Interface (CLI)
 
-To encrypt a file, run the following command:
+###### To encrypt a file without the GUI, run the following command:
 
 ```bash
 vaultx --encrypt path/to/file.txt --key mypassword --no-ui
 ```
-To decrypt a file, run the following command:
+###### To decrypt a file without the GUI, run the following command:
 
 ```bash
 vaultx --decrypt path/to/file.txt.vaultx --key mypassword --no-ui
@@ -37,19 +37,19 @@ vaultx --decrypt path/to/file.txt.vaultx --key mypassword --no-ui
 
 ### Graphical User Interface (GUI)
 
-To encrypt a file, run the following command:
+###### To encrypt a file, run the following command:
 
 ```bash
 vaultx --encrypt path/to/file.txt
 ```
 
-To decrypt a file, run the following command:
+###### To decrypt a file, run the following command:
 
 ```bash
 vaultx --decrypt path/to/file.txt.vaultx
 ```
 
-Note: If you want to use the Python files, you will need to adjust the commands. For example, if you want to use the Python files, you can run:
+>**Note**: If you want to use the Python files, you will need to adjust the commands. For example, if you want to use the Python files, you can run:
 
 ```bash
 python vaultx.py --encrypt path/to/file.txt --key mypassword --no-ui
@@ -64,35 +64,37 @@ python vaultx.py --encrypt path/to/file.txt
 python vaultx.py --decrypt path/to/file.txt.vaultx
 ```
 
-### Automatic Decryption
+### Automatic Decryption and Context Menu
 
-Also, if you want to automatically prompt for decryption when double-clicking a .vaultx file, you can run the vaultx_register file as an administrator.
-This will associate the .vaultx files with the vaultx script, and double-clicking a .vaultx file will automatically prompt for decryption.
+Also, if you want to automatically prompt for **decryption** when double-clicking a `.vaultx` file and having a context menu option, you can run the `vaultx_register` file as an **administrator**.
 
-Note: If you want to use the Python files, you will need to adjust the commands in the vaultx_register to match the vaultx.py script.
+This will associate the `.vaultx` files with the `vaultx` script, and double-clicking a `.vaultx` file will automatically prompt for **decryption**.
+It will also show a context menu option for **decryption** and **encryption** when right-clicking a file.
 
-For bash:
+>**Note**: If you want to use the Python files, you will need to adjust the commands in the vaultx_register to match the vaultx.py script.
+
+##### For bash:
 ```bash
 vaultx_register
 ```
-or for python:
-change this line in the vaultx_register.py file:
+##### For python, make this change in the vaultx_register.py file:
+###### from this:
 ```python
 app_path = os.path.abspath("vaultx.exe")  # Path to your executable
 ```
-to this:
+###### to this:
 ```python
 app_path = os.path.abspath("vaultx_register.py")  # Path to your python script
 ```
 ## Installation
 
-To install VaultX, run the following command:
+##### To install VaultX, run the following command:
 
 ```bash
 vaultx_register
 ```
-or for python:
+##### for python:
 ```bash
 python vaultx_register.py
 ```
-Note: In order to run this script successfully you will need to run it as an administrator.
+>**Note** In order to run this script successfully you will need to run it as an administrator.
