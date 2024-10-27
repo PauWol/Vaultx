@@ -1,0 +1,3 @@
+pyinstaller  --add-data "vaultx.ico;." --icon=vaultx.ico vaultx.py
+
+pyinstaller --onefile vaultx_register.py
