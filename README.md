@@ -84,7 +84,7 @@ app_path = os.path.abspath("vaultx.exe")  # Path to your executable
 ```
 ###### to this:
 ```python
-app_path = os.path.abspath("vaultx_register.py")  # Path to your python script
+app_path = os.path.abspath("vaultx.py")  # Path to your python script
 ```
 ## Installation
 
